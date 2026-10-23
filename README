@@ -1,0 +1,35 @@
+# NESter SDL3 Frontend
+
+Graphical frontend for our NES emulator, written in C using SDL3.
+
+## Requirements
+
+- C11-compatible compiler
+- CMake 3.21 or newer
+- Ninja or another supported build system
+- Git and internet access for downloading SDL3
+
+## Build
+
+cmake -S . -B build -G Ninja
+cmake --build build
+
+## Run
+
+Windows:
+.\build\NESter.exe
+
+Linux/macOS:
+./build/NESter
+
+## Current Functionality
+
+- Creates an SDL3 application window
+- Processes window-close events
+
+## Planned Integration
+
+- PPU framebuffer rendering
+    - We need to decided on a framebuffer format
+- Controller input mapping
+- APU audio output

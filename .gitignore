@@ -1,0 +1,18 @@
+# Generated build files
+build/
+cmake-build-*/
+
+# Compiled binaries
+*.exe
+*.dll
+*.o
+*.obj
+
+# Editor-specific files
+.vscode/
+
+# Local SDL3 source checkout
+vendored/
+
+# Old tutorial dependencies
+SDL3-devel-*/
