@@ -102,8 +102,8 @@ void Nrom::ppu_write(std::uint16_t addr, std::uint8_t data) {
     if (addr > 0x1fff) {
         throw std::out_of_range("Address is not NROM CHR RAM: " + std::to_string(addr));
     }
-    // CHR ROM is read-only; write only when cartridge has CHR RAM.
-    if (!chr_rom.empty()) {
+    // CHR ROM is read-only; write only when the cartridge has CHR RAM.
+    if (chr_rom.empty()) {
         chr_ram.at(addr) = data;
     }
     return;
