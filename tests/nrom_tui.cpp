@@ -31,7 +31,7 @@ void draw(const std::string& last_operation,
               << "Commands:\n"
               << "\tcr <hex-address>            CPU read, e.g cr 8000\n"
               << "\tpr <hex-address>            PPU read, e.g pr 0010\n"
-              << "\tpw <hex-address> <value>    PPU read, e.g pr 0010 42\n"
+              << "\tpw <hex-address> <value>    PPU write, e.g pw 0010 42\n"
               << "\tls                          List all NROM addresses\n"
               << "\tq                           Quit\n\n"
               << "> " << std::flush;
