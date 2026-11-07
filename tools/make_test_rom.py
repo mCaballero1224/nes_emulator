@@ -4,6 +4,7 @@ Generate a small NROM file for the mapper tests.
 """
 
 from pathlib import Path
+import random
 
 
 OUTPUT = Path(__file__).resolve().parent.parent / "tests" / "roms" / "test.nes"
@@ -18,8 +19,8 @@ header[4] = 1  # 1 PRG bank
 header[5] = 0  # 0 CHR banks
 header[6] = 0  # mapper 0
 
-# Fille PRG with a known value to verify reads and 16KiB mirroring.
-prg = bytearray([0x42] * 16 * 1024)
+# Fill PRG with random values.
+prg = bytearray(random.getrandbits(8) for _ in range(16 * 1024))
 
 OUTPUT.write_bytes(header + prg)
 print(f"Created test ROM: {OUTPUT}")
